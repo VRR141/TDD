@@ -32,7 +32,11 @@ public class PhoneBook {
     }
 
     public String findByName(String name){
-        return null;
+        String result = contacts.get(name);
+        if (result == null){
+            return "not found";
+        }
+        return result;
     }
 
 
