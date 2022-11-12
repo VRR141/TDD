@@ -40,7 +40,14 @@ public class PhoneBook {
     }
 
     public String printAllNames(){
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        Set<Map.Entry<String, String>> entrySet = contacts.entrySet();
+        for (Map.Entry<String, String> pair: entrySet){
+            sb.append("Name: ").append(pair.getKey()).append(" Number: ").append(pair.getKey()).append("\n");
+        }
+
+        return sb.toString();
     }
 
 

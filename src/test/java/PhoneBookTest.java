@@ -97,6 +97,10 @@ public class PhoneBookTest {
             sb.append("Name: ").append(i).append(" Number: ").append(i).append("\n");
         }
 
+        for (int i = 0; i < contactSize; i++){
+            phoneBook.add(String.valueOf(i), String.valueOf(i));
+        }
+
         String expected = sb.toString();
         String actual = phoneBook.printAllNames();
 
