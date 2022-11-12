@@ -31,6 +31,10 @@ public class PhoneBook {
         return "not found";
     }
 
+    public String findByName(String name){
+        return null;
+    }
+
 
 
     public int getContactsSize(){
