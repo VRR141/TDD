@@ -88,4 +88,26 @@ public class PhoneBookTest {
         Assertions.assertInstanceOf(expected, actual);
     }
 
+    @Test
+    public void testPrintAllNamesResult(){
+        int contactSize = 10;
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < contactSize; i++){
+            sb.append("Name: ").append(i).append(" Number: ").append(i).append("\n");
+        }
+
+        String expected = sb.toString();
+        String actual = phoneBook.printAllNames();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintAllNamesClass(){
+        Class<String> expected = String.class;
+        var actual = phoneBook.printAllNames();
+        Assertions.assertInstanceOf(expected, actual);
+    }
+
 }

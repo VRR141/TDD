@@ -39,6 +39,10 @@ public class PhoneBook {
         return result;
     }
 
+    public String printAllNames(){
+        return null;
+    }
+
 
 
     public int getContactsSize(){
