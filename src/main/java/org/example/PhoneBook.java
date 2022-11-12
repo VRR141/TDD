@@ -1,8 +1,23 @@
 package org.example;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class PhoneBook {
 
-    public boolean add(){
-        return false;
+    private Map<String, String> contacts;
+
+    public PhoneBook(){
+        contacts = new TreeMap<>();
+    }
+
+
+    public int add(String name, String number){
+        contacts.put(name, number);
+        return contacts.size();
+    }
+
+    public int getContactsSize(){
+        return contacts.size();
     }
 }

@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 public class PhoneBookTest {
 
     private PhoneBook phoneBook;
@@ -18,11 +20,24 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void add(){
-        PhoneBook phoneBook = new PhoneBook();
-        var b = phoneBook.add();
-        Assertions.assertInstanceOf(Integer.class, b);
+    public void testAddClass(){
+        Class<Integer> expected = Integer.class;
+        var actual = phoneBook.add("someString", "someString");
+        Assertions.assertInstanceOf(expected, actual);
     }
 
+    @Test
+    public void testAddResult() {
+        int randomCounter = 10;
+        int expected = 0;
+
+        for (int i = 0; i < new Random().nextInt()*randomCounter; i++){
+            expected = phoneBook.add(String.valueOf(i), String.valueOf(i));
+        }
+
+        int actual = phoneBook.getContactsSize();
+
+        Assertions.assertEquals(expected, phoneBook.getContactsSize());
+    }
 
 }
