@@ -17,7 +17,14 @@ public class PhoneBook {
         return contacts.size();
     }
 
+    public String findByNumber(String number){
+        return null;
+    }
+
+
+
     public int getContactsSize(){
         return contacts.size();
     }
+
 }

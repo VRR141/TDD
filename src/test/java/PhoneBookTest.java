@@ -40,4 +40,27 @@ public class PhoneBookTest {
         Assertions.assertEquals(expected, phoneBook.getContactsSize());
     }
 
+    @Test
+    public void testFindByNumberResult(){
+        int contactSize = 10;
+
+        String expected = String.valueOf(contactSize - 2);
+
+        for (int i = 0; i < contactSize; i++){
+            phoneBook.add(String.valueOf(i), String.valueOf(i));
+        }
+        
+        String actual = phoneBook.findByNumber(String.valueOf(contactSize - 2));
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testFindByNumberClass(){
+        Class<String> expected = String.class;
+        String number = "9";
+        var actual = phoneBook.findByNumber(number);
+        Assertions.assertInstanceOf(expected, actual);
+    }
+
 }
