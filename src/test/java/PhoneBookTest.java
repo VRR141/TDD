@@ -43,14 +43,15 @@ public class PhoneBookTest {
     @Test
     public void testFindByNumberResult(){
         int contactSize = 10;
+        int range = 2; //less then contactSize
 
-        String expected = String.valueOf(contactSize - 2);
+        String expected = String.valueOf(contactSize - range);
 
         for (int i = 0; i < contactSize; i++){
             phoneBook.add(String.valueOf(i), String.valueOf(i));
         }
-        
-        String actual = phoneBook.findByNumber(String.valueOf(contactSize - 2));
+
+        String actual = phoneBook.findByNumber(String.valueOf(contactSize - range));
 
         Assertions.assertEquals(expected, actual);
     }

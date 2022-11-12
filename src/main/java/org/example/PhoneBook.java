@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -18,7 +19,16 @@ public class PhoneBook {
     }
 
     public String findByNumber(String number){
-        return null;
+        String result;
+
+        Set<Map.Entry<String, String>> entrySet = contacts.entrySet();
+        for (Map.Entry<String, String> pair: entrySet){
+            if (number.equals(pair.getValue())){
+                result = pair.getValue();
+                return result;
+            }
+        }
+        return "not found";
     }
 
 
